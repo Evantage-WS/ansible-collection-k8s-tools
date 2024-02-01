@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: evantage
+  description: Ansible role to install setup_bashrc
+  license: MIT
+  min_ansible_version: "2.9"
+  role_name: setup_bashrc
+  platforms:
+    - name: SLES
+      versions:
+        - all
+    - name: opensuse
+      versions:
+        - all
+  galaxy_tags:
+    - setup_bashrc
+
+dependencies: []

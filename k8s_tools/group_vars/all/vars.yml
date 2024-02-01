@@ -1,0 +1,5 @@
+home_user: "root"
+krew_plugins:
+  - "ctx"
+  - "neat"
+  - "ns"

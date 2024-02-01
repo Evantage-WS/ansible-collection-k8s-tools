@@ -1,0 +1,49 @@
+---
+- name: Check if kubectl is installed
+  command: kubectl version --client
+  register: kubectl_check
+  failed_when: false
+  changed_when: false
+
+- name: Set kubectl_installed fact based on kubectl_check
+  set_fact:
+    kubectl_installed: "{{ kubectl_check.rc == 0 }}"
+
+- name: Get installed kubectl version
+  command: kubectl version --client -short | awk '/Client/ {print $3}'
+  register: installed_kubectl_version
+  failed_when: false
+  changed_when: false
+  when: kubectl_installed
+
+- set_fact:
+    installed_kubectl_version: "{{ installed_kubectl_version.stdout.split('\n')[0].split(': ')[1] }}"
+  when: kubectl_installed
+
+- name: Retrieve the latest kubectl version
+  command:
+    cmd: "curl -L -s https://dl.k8s.io/release/stable.txt"
+  register: latest_kubectl_version
+  changed_when: false
+
+- name: Install kubectl using binary
+  block:
+    - name: Download kubectl binary
+      get_url:
+        url: "https://dl.k8s.io/release/{{ latest_kubectl_version.stdout }}/bin/linux/amd64/kubectl"
+        dest: "/tmp/kubectl"
+        mode: '0755'
+        force: no
+      when: not kubectl_installed or (installed_kubectl_version.stdout is defined and installed_kubectl_version.stdout != latest_kubectl_version.stdout)
+
+    - name: Install kubectl
+      command:
+        cmd: "sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl"
+      become: yes
+      when: not kubectl_installed or (installed_kubectl_version.stdout is defined and installed_kubectl_version.stdout != latest_kubectl_version.stdout)
+
+    - name: Clean up the downloaded binary
+      file:
+        path: "/tmp/kubectl"
+        state: absent
+      when: not kubectl_installed or (installed_kubectl_version.stdout is defined and installed_kubectl_version.stdout != latest_kubectl_version.stdout)

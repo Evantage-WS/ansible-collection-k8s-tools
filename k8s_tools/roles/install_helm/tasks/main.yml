@@ -1,0 +1,12 @@
+---
+- name: Check if Helm is installed
+  command: which helm
+  register: helm_check
+  failed_when: false
+  changed_when: false
+
+- name: Download and install Helm
+  shell: "curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash"
+  when:
+    - ansible_os_family == 'Suse'
+    - helm_check.rc != 0
