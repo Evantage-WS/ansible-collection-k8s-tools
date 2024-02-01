@@ -1,5 +1,7 @@
 # k8s-tools
 
+Based on https://github.com/somaz94/ansible-k8s-iac-tool
+
 This Ansible collection is dedicated to setting up Kubernetes tooling on the SUSE Linux Family. The collection comprises several roles, each focusing on a specific tool or configuration:
 
 - `install_kubectl`: Sets up kubectl.
