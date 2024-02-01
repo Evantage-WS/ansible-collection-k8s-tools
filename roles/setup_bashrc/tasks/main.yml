@@ -11,7 +11,72 @@
     block: |
       # kubectl configurations
       source <(kubectl completion bash)
+      export KC=~/.kube/config
+      export do='--dry-run=client -o yaml'
+      export dos='--dry-run=server -o yaml'
+      export now='--force --grace-period 0'
+      export nks='-n kube-system'
+
       alias k=kubectl
+
+      # kubectl config
+      alias kcc='egrep "(current-context|namespace)" $KC'
+      alias kn='kubectl config set-context --current --namespace'
+      alias knd='kubectl config set-context --current --namespace default'
+      alias kcg='kubectl config get-contexts'
+
+      # kubectl get
+      alias kg='k get'
+      alias kgd='k get deployments'
+      alias kgs='k get svc'
+      alias kgp='k get pods'
+      alias kgs='k get svc'
+      alias kgi='k get ingress'
+      alias kgns='k get namespaces'
+      alias kgn='k get nodes'
+      alias kge='k get events --sort-by='.metadata.creationTimestamp' | tail - -n 8'
+
+      # kubectl describe
+      alias kd='k describe'
+      alias kdp='k describe pod'
+      alias kdn='k describe node'
+      alias kdd='k describe deployment'
+      alias kds='k describe svc'
+      alias kdi='k describe ingress'
+
+      # kubectl edit
+      alias ke='k edit'
+      alias kep='k edit pod'
+      alias ked='k edit deployment'
+      alias kes='k edit svc'
+      alias kei='k edit ingress'
+
+      # kubectl apply
+      alias ka='k apply'
+      alias kad='k apply --dry-run=client'
+      alias kaf='k apply -f'
+
+      # kubectl delete
+      alias kdel='k delete'
+      alias kdelf='k delete -f'
+      alias kdelp='k delete pod'
+      alias kdeld='k delete deployment'
+      alias kdels='k delete svc'
+      alias kdeli='k delete ingress'
+
+      # kubectl logs
+      alias kl='kubectl logs'
+
+      # kubectl editor
+      export KUBE_EDITOR='code -w'
+
+      # grep
+      alias g='grep -i --color=auto'
+      alias ge='g -A5 -B5'
+      alias path='echo -e ${PATH//:/\\n}'
+
+      # etcd
+      export ETCDCTL_API=3
       complete -F __start_kubectl k
 
       # kubectl krew configurations
