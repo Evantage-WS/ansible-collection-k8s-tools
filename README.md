@@ -1,6 +1,6 @@
 # k8s-tools
 
-Based on https://github.com/somaz94/ansible-k8s-iac-tool
+Based on https://github.com/somaz94/ansible-k8s-iac-tool and https://github.com/Pandemonium1986/ansible-collection-k8s-toolbox
 
 This Ansible collection is dedicated to setting up Kubernetes tooling on the SUSE Linux Family. The collection comprises several roles, each focusing on a specific tool or configuration:
 

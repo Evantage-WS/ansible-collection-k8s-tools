@@ -1,0 +1,8 @@
+---
+_source_url: "https://github.com"
+_github_namespace: "ahmetb/kubectx"
+_asset_name:
+  - kubens
+  - kubectx
+kubectx_installation_path: "/opt/github/kubectx"
+kubectx_version: "master"
