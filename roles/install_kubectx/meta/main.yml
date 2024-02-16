@@ -1,10 +1,17 @@
 ---
 galaxy_info:
-  author: evantage
-  description: Ansible role to install kubectx
-  license: MIT
-  min_ansible_version: "2.9"
   role_name: install_kubectx
+  namespace: evantage
+
+  description: Ansible role to install kubectx on the SUSE Linux family, based on https://github.com/Pandemonium1986/ansible-role-kubectx
+
+  author: ws - evantage
+  company: Evantage
+
+  license: MIT
+
+  min_ansible_version: "2.9"
+
   platforms:
     - name: SLES
       versions:
@@ -12,7 +19,16 @@ galaxy_info:
     - name: opensuse
       versions:
         - all
+
   galaxy_tags:
+    - kubernetes
+    - k8s
+    - rke2
+    - k3s
+    - suse
+    - sles
+    - opensuse
+    - rancher
     - kubectx
 
 dependencies: []

@@ -1,10 +1,17 @@
 ---
 galaxy_info:
-  author: somaz
-  description: Ansible role to install krew plugins
-  license: MIT
-  min_ansible_version: "2.9"
   role_name: install_krew_plugins
+  namespace: evantage
+
+  description: Ansible role to install helm on the SUSE Linux family, based on https://github.com/somaz94/ansible-k8s-iac-tool
+
+  author: ws - evantage
+  company: Evantage
+
+  license: MIT
+
+  min_ansible_version: "2.9"
+
   platforms:
     - name: SLES
       versions:
@@ -12,7 +19,16 @@ galaxy_info:
     - name: opensuse
       versions:
         - all
+
   galaxy_tags:
+    - kubernetes
+    - k8s
+    - rke2
+    - k3s
+    - suse
+    - sles
+    - opensuse
+    - rancher
     - krew_plguins
 
 dependencies: []

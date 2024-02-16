@@ -1,16 +1,26 @@
-namespace: evantage
 name: k8s_tools
+namespace: evantage
 version: 1.0.0
+
 readme: README.md
+
+description: Collection of roles for Kubernetes & tooling setup for the SUSE Linux Family, based on https://github.com/somaz94/ansible-k8s-iac-tool
+
 authors:
   - ws info@evantage.nl
-description: Collection of roles for Kubernetes tooling setup for the SUSE Linux Family, based on https://github.com/somaz94/ansible-k8s-iac-tool
+
 license_file: LICENSE
+
 tags:
   - kubernetes
   - tooling
   - helm
+  - k9s
   - krew
+  - krew plugins
   - kubectl
+  - kubectx
+
 dependencies: {}
+
 repository: https://github.com/Evantage-WS/ansible-roles
