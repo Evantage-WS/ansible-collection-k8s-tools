@@ -1,10 +1,9 @@
 ---
 _source_url: "https://github.com"
 _github_namespace: "derailed/k9s"
-_asset_name: "k9s_Linux_amd64.tar.gz"
 _binary_name: "k9s"
 
 # https://github.com/derailed/k9s/releases
 k9s_cache_path: "/var/cache/github"
 k9s_installation_path: "/opt/github/k9s"
-k9s_version: "v0.31.7"
+k9s_version: "v0.31.9"
