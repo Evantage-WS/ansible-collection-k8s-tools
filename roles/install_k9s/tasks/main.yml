@@ -15,17 +15,27 @@
     - "{{ k9s_installation_path }}"
 
 - name: Ensure k9s is installed
-  ansible.builtin.get_url:
-    url: "{{ _source_url }}/{{ _github_namespace }}/releases/download/{{ k9s_version }}/{{ _asset_name }}"
-    dest: "{{ k9s_cache_path }}"
-    mode: "0755"
+  block:
+    - name: Set architecture variable
+      ansible.builtin.set_fact:
+        architecture: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"
+    - name: Download k9s
+      ansible.builtin.get_url:
+        url: "{{ _source_url }}/{{ _github_namespace }}/releases/download/{{ k9s_version }}/k9s_Linux_{{ architecture }}.tar.gz"
+        dest: "{{ k9s_cache_path }}"
+        mode: "0755"
 
 - name: Unarchive k9s archive into k9s_installation_path
-  ansible.builtin.unarchive:
-    src: "{{ k9s_cache_path }}/{{ _asset_name }}"
-    dest: "{{ k9s_installation_path }}"
-    remote_src: true
-    mode: "0755"
+  block:
+    - name: Set architecture variable
+      ansible.builtin.set_fact:
+        architecture: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"
+    - name: Copy k9s to installation path
+      ansible.builtin.unarchive:
+        src: "{{ k9s_cache_path }}/k9s_Linux_{{ architecture }}.tar.gz"
+        dest: "{{ k9s_installation_path }}"
+        remote_src: true
+        mode: "0755"
 
 - name: Ensure k9s link is created
   ansible.builtin.file:
