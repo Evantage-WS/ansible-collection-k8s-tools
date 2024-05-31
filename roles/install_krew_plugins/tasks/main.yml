@@ -4,29 +4,35 @@
   register: user_home
   changed_when: false
 
-- name: Check if krew plugin is already installed
-  shell: "kubectl krew list | grep -w {{ item }}"
-  with_items: "{{ krew_plugins }}"
-  register: installed_plugins
-  changed_when: false
-  failed_when: installed_plugins.rc > 1
-  when: krew_plugins is defined
-  environment:
-    KREW_ROOT: "{{ user_home.stdout if user_home is defined else ansible_env.HOME }}/.krew"
-    PATH: "{{ user_home.stdout if user_home is defined else ansible_env.HOME }}/.krew/bin:{{ ansible_env.PATH }}"
+# - name: Check if krew plugin is already installed
+#   shell: "kubectl krew list | grep -w {{ item }}"
+#   with_items: "{{ krew_plugins }}"
+#   register: installed_plugins
+#   changed_when: false
+#   failed_when: installed_plugins.rc > 1
+#   when: krew_plugins is defined
+#   environment:
+#     KREW_ROOT: "{{ user_home.stdout }}/.krew"
+#     PATH: "{{ ansible_env.PATH }}:{{ user_home.stdout }}/.krew/bin:/usr/local/bin"
 
-- name: Install krew plugins for Suse
+# - name: Install krew plugins for Suse
+#   shell: "kubectl krew install {{ item }}"
+#   with_items: "{{ krew_plugins }}"
+#   # args:
+#   #   executable: /bin/bash
+#   register: plugin_install_result
+#   changed_when: "'Added plugin' in plugin_install_result.stdout"
+#   when:
+#     - krew_plugins is defined
+#     - "item not in installed_plugins.results|map(attribute='stdout')|list"
+#     - ansible_os_family == 'Suse'
+#   environment:
+#     KREW_ROOT: "{{ user_home.stdout }}/.krew"
+#     PATH: "{{ ansible_env.PATH }}:{{ user_home.stdout }}/.krew/bin:/usr/local/bin"
+
+- name: Install Krew plugins
+  become: true
+  become_user: "{{ home_user }}"
   shell: "kubectl krew install {{ item }}"
   with_items: "{{ krew_plugins }}"
-  when:
-    - krew_plugins is defined
-    - "item not in installed_plugins.results|map(attribute='stdout')|list"
-    - ansible_os_family == 'Suse'
-  args:
-    executable: /bin/bash
-  environment:
-    KREW_ROOT: "{{ user_home.stdout if user_home is defined else ansible_env.HOME }}/.krew"
-    PATH: "{{ user_home.stdout if user_home is defined else ansible_env.HOME }}/.krew/bin:{{ ansible_env.PATH }}"
-  become: false
-  register: plugin_install_result
-  changed_when: "'Added plugin' in plugin_install_result.stdout"
+  when: krew_plugins is defined

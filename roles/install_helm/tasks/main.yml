@@ -1,12 +1,40 @@
 ---
 - name: Check if Helm is installed
   command: which helm
-  register: helm_check
+  register: helm_exists
   failed_when: false
   changed_when: false
 
-- name: Download and install Helm
-  shell: "curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash"
-  when:
-    - ansible_os_family == 'Suse'
-    - helm_check.rc != 0
+- name: if Helm executable is installed, remove it
+  ansible.builtin.file:
+    path: "{{ helm_exists }}"
+    state: absent
+  when: helm_exists.rc != 0
+
+# - name: Download and install Helm
+#   shell: "curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash"
+#   when:
+#     - ansible_os_family == 'Suse'
+#     - helm_check.rc != 0
+
+- name: Get latest Helm version
+  shell: "curl https://get.helm.sh/helm-latest-version"
+  register: helm_version
+
+- name: Set architecture variable
+  ansible.builtin.set_fact:
+    architecture: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"
+
+- debug: msg="https://get.helm.sh/helm-{{ helm_version.stdout }}-linux-{{ architecture }}.tar.gz"
+
+- name: Install helm
+  unarchive:
+    src: https://get.helm.sh/helm-{{ helm_version.stdout }}-linux-{{ architecture }}.tar.gz
+    dest: /usr/local/bin
+    extra_opts: "--strip-components=1"
+    owner: root
+    group: root
+    mode: 0755
+    remote_src: true
+  args:
+    creates: /usr/local/bin/helm

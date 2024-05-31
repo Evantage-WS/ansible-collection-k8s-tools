@@ -28,9 +28,12 @@
 
 - name: Install kubectl using binary
   block:
+    - name: Set architecture variable
+      ansible.builtin.set_fact:
+        architecture: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"
     - name: Download kubectl binary
       get_url:
-        url: "https://dl.k8s.io/release/{{ latest_kubectl_version.stdout }}/bin/linux/amd64/kubectl"
+        url: "https://dl.k8s.io/release/{{ latest_kubectl_version.stdout }}/bin/linux/{{ architecture }}/kubectl"
         dest: "/tmp/kubectl"
         mode: '0755'
         force: no
@@ -39,7 +42,7 @@
     - name: Install kubectl
       command:
         cmd: "sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl"
-      become: yes
+      become: true
       when: not kubectl_installed or (installed_kubectl_version.stdout is defined and installed_kubectl_version.stdout != latest_kubectl_version.stdout)
 
     - name: Clean up the downloaded binary

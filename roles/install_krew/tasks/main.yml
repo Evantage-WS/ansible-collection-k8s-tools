@@ -31,7 +31,8 @@
             KREW="krew-${OS}_${ARCH}" &&
             curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
             tar zxvf "${KREW}.tar.gz" &&
-            ./"${KREW}" install krew
+            ./"${KREW}" install krew &&
+            echo "export PATH=\${KREW_ROOT:-\$HOME/.krew}/bin:\$PATH" >> {{ user_home.stdout }}/.bashrc
           fi
         )
       args:
@@ -40,6 +41,7 @@
         KREW_ROOT: "{{ user_home.stdout }}/.krew"
         PATH: "{{ ansible_env.PATH }}:{{ user_home.stdout }}/.krew/bin"
       become: true
+      become_user: "{{ home_user }}"
       register: krew_install_result
       changed_when: "'Added krew' in krew_install_result.stdout"
   when: krew_check.rc != 0

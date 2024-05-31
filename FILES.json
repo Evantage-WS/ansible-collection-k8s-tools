@@ -1,0 +1,355 @@
+{
+ "files": [
+  {
+   "name": ".",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "group_vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "group_vars/all",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "group_vars/all/vars.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5677c6eae0467198eea952a0f88d1976ae120c4f0731408a7d0cc240969ad858",
+   "format": 1
+  },
+  {
+   "name": "LICENSE",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "096d7297060f9e81de8d9326bc9ee3f2a85274a1f35dcc86eb9bb441ec3674ba",
+   "format": 1
+  },
+  {
+   "name": "meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "meta/runtime.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "2639689245767a880afb749f99f77ffeed83f03a36901d8581cde2c3293f3be3",
+   "format": 1
+  },
+  {
+   "name": "roles",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_k9s",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_k9s/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_k9s/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "dc12ac96d797ec31c8fb5446f6fb1e28d67ad8ca3a39527174b04d804c30702d",
+   "format": 1
+  },
+  {
+   "name": "roles/install_k9s/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_k9s/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ca8fdf2b4c78b5e6eb9ad3bbeb512b85389b5c5ec1ffa004d75cfed95fc045f7",
+   "format": 1
+  },
+  {
+   "name": "roles/install_k9s/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_k9s/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5fdde7cd3f847dcada428131ad258d0ceb9ab259ab58340f73b7f79fdef32539",
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew_plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew_plugins/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew_plugins/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6d5e2249ec19a9520cd32efc74936b440609971ab3f743b754f3b60d73e6c801",
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew_plugins/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew_plugins/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "2fd05682cc5d861cdd2c2ae1ee2214fdaefe274a953c2561487aafcea16d4940",
+   "format": 1
+  },
+  {
+   "name": "roles/setup_bashrc",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/setup_bashrc/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/setup_bashrc/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d6bb8eb335c24351d2b54173b8800e9d1cdfc237c20dae689e12c6c272f55eb4",
+   "format": 1
+  },
+  {
+   "name": "roles/setup_bashrc/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/setup_bashrc/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1034893a44415c6878652bb32598bf30a6ceb85da17279898dac0bb4cd3d1c83",
+   "format": 1
+  },
+  {
+   "name": "roles/setup_bashrc/handlers",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/setup_bashrc/handlers/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c938704c019424c913b5ab13d4082443c455c3ce5e2321eac9cbc6448c079ee1",
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectx",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectx/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectx/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c7480dc4c70dec9d28462b3a876254d968063f1f16e544bdaba14b81ef6cb5d6",
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectx/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectx/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4f17fdcad85c82f2cd9b4bfb7dfd1124a27b3157718bcf6370ef7450bdc0c287",
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectx/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectx/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4ca7ba56e511a718a1c72190181d4233919e01a55d48e0fcbcca4003c8d0ee8b",
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectl",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectl/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectl/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ef9800af73aa19159eaceea30d6b7b239ab3219d80dfa1b6a9124d7027dbf36e",
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectl/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_kubectl/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "36c5caaf45d94c3d7296bf4d0dc2ce8c171fbb5b9bf4c523bee8f8617b4657ef",
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d6f5c73f5ea567718741e24568a22dd3d658f15263178ce57b9f96017c51c4d4",
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_krew/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7665cebd7fe2e70cc4b22d09b9006c22045de85ed57bd8ee09b919f7e3bb9870",
+   "format": 1
+  },
+  {
+   "name": "roles/install_helm",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_helm/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_helm/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "2c9085900cc82b23c6d76020e1579e4389fee051b942d94740f54607b15a63aa",
+   "format": 1
+  },
+  {
+   "name": "roles/install_helm/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/install_helm/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8491a3b04a58107635ef5b740d7311e597110d1f5965007030c1db7e04facf14",
+   "format": 1
+  },
+  {
+   "name": "README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9e6aebe292c7be03b54f38da35b14982382ba2485c6246bdcd054198ec0df986",
+   "format": 1
+  }
+ ],
+ "format": 1
+}
