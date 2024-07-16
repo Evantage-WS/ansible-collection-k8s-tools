@@ -17,12 +17,10 @@ This Ansible collection is dedicated to setting up Kubernetes tooling on the SUS
 ## Requirements
 
 - Ansible 2.9 or higher
-- Targeted OS: Suse Linux Family
+- Targeted OS: openSUSE /SUSE Linux Enterprise (SLES)
 <br/>
 
 ## Example Playbook
-
-Put source in ~/.ansible/collections/ansible_collections/evantage
 
 ### Running Locally
 

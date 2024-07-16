@@ -1,5 +1,5 @@
 name: k8s_tools
-namespace: evantage
+namespace: evantage_ws
 version: 1.0.0
 
 readme: README.md
@@ -17,10 +17,10 @@ tags:
   - helm
   - k9s
   - krew
-  - krew plugins
+  - krew_plugins
   - kubectl
   - kubectx
 
 dependencies: {}
 
-repository: https://github.com/Evantage-WS/ansible-roles
+repository: https://github.com/Evantage-WS/ansible-collection-k8s-tools
