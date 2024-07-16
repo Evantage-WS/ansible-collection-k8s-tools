@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: install_helm
-  namespace: evantage
+  namespace: evantage_ws
 
   description: Ansible role to install helm on the SUSE Linux family, based on https://github.com/somaz94/ansible-k8s-iac-tool
 

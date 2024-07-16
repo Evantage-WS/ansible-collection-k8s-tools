@@ -1,6 +1,6 @@
 {
  "collection_info": {
-  "namespace": "evantage",
+  "namespace": "evantage_ws",
   "name": "k8s_tools",
   "version": "1.0.0",
   "authors": [
@@ -21,7 +21,7 @@
   "license": [],
   "license_file": "LICENSE",
   "dependencies": {},
-  "repository": "https://github.com/Evantage-WS/ansible-roles",
+  "repository": "https://github.com/Evantage-WS/ansible-collection-k8s-tools",
   "documentation": null,
   "homepage": null,
   "issues": null

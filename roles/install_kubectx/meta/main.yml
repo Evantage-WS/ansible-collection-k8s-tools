@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: install_kubectx
-  namespace: evantage
+  namespace: evantage_ws
 
   description: Ansible role to install kubectx on the SUSE Linux family, based on https://github.com/Pandemonium1986/ansible-role-kubectx
 
