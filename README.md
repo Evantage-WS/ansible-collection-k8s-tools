@@ -4,11 +4,13 @@ Based on https://github.com/somaz94/ansible-k8s-iac-tool and https://github.com/
 
 This Ansible collection is dedicated to setting up Kubernetes tooling on the SUSE Linux Family. The collection comprises several roles, each focusing on a specific tool or configuration:
 
-- `install_kubectl`: Sets up kubectl.
-- `install_krew`: Sets up krew.
-- `install_krew_plugins`: Installs specified krew plugins.
-- `install_helm`: Sets up helm.
-- `setup_bashrc`: Adds specific configurations to the bashrc.
+- `install_kubectl`     : Install kubectl binary
+- `install_kubectx`     : Install kubectx binary
+- `install_krew`        : Install krew binary
+- `install_krew_plugins`: Install specified krew plugins
+- `install_helm`        : Install helm
+- `install_k9s`         : Install K9s
+- `setup_bashrc`        : Adds specific configurations to the bashrc
 
 <br/>
 
@@ -54,9 +56,11 @@ Write the playbook in the `site.yml` file:
   roles:
     - setup_bashrc
     - install_kubectl
+    - install_kubectx
     - install_krew
     - install_krew_plugins
     - install_helm
+    - install_k9s
 
 ```
 
